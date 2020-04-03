@@ -1,20 +1,29 @@
 #!/usr/bin/env bash
 
-data="$(
-    cat "$1" \
-      | sed 's/"/\\"/g' \
-      | sed ':a;N;$!ba;s/\n/\\n/g' \
-)"
+set +x
 
-if [[ -z "$2" ]]; then
-    context=''
-else
-    context=",\"context\":\"$2\""
-fi
+for path in ./*.md; do
+  echo "input: $path"
 
-echo '<!DOCTYPE html>'
-echo '<html><head>'
-echo '<link rel="stylesheet" type="text/css" href="./index.css" >'
-echo '</head><body>'
-curl -s --data "{\"text\":\"$data\",\"mode\":\"gfm\"$context}" 'https://api.github.com/markdown'
-echo '</body></html>'
+  data="$(
+    cat "$path" |
+      sed 's/"/\\"/g' |
+      sed ':a;N;$!ba;s/\n/\\n/g'
+  )"
+  name=$(basename "$path" .md)
+
+  if [ $name == "README" ]; then
+    name="index"
+  fi
+
+  output="./public/${name}.html"
+
+  echo "output: $output"
+
+  echo '<!DOCTYPE html><html lang="en"><head>' >$output
+  cat ./head.html >>$output
+  echo '</head><body>' >>$output
+  echo '<img src="./logo.png" alt="logo" class="logo">' >>$output
+  curl -s --data "{\"text\":\"$data\",\"mode\":\"gfm\"}" 'https://api.github.com/markdown' >>$output
+  echo '</body></html>' >>$output
+done
