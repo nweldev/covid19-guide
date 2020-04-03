@@ -13,7 +13,6 @@ jobs:
 
     - name: Build
       run: |
-        mkdir public
         bash build.sh README.md > public/index.html
         
     - name: Deploy

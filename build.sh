@@ -14,7 +14,7 @@ fi
 
 echo '<!DOCTYPE html>'
 echo '<html><head>'
-echo '<link rel="stylesheet" type="text/css" href="index.css" >'
+echo '<link rel="stylesheet" type="text/css" href="./index.css" >'
 echo '</head><body>'
 curl -s --data "{\"text\":\"$data\",\"mode\":\"gfm\"$context}" 'https://api.github.com/markdown'
 echo '</body></html>'
