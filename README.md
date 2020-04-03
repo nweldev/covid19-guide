@@ -142,7 +142,7 @@ The wording of each guideline indicates how strong the recommendation is.
 - [Global recommendations of physical activity for health](https://apps.who.int/iris/bitstream/handle/10665/44399/9789241599979_eng.pdf;jsessionid=1CA0AB344ADA8498780C49A85807429B?sequence=1), WHO
 - [Stay physically active during self-quarantine](http://www.euro.who.int/en/health-topics/health-emergencies/coronavirus-covid-19/novel-coronavirus-2019-ncov-technical-guidance/stay-physically-active-during-self-quarantine/_recache), WHO
 
-## Sources & Acknowledgments
+### Sources
 
 A major part of this document is a derivative of “[Mental health and psychosocial considerations during the COVID-19 outbreak](https://www.who.int/publications-detail/mental-health-and-psychosocial-considerations-during-the-covid-19-outbreak)” by the World Health Organization, 2020, made available under the [CC BY-NC-SA 3.0 IGO](https://creativecommons.org/licenses/by-nc-sa/3.0/igo/) license.
 
