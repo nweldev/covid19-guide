@@ -7,14 +7,14 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v3
 
     - name: Build
       run: |
         bash build.sh
-        
+
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
